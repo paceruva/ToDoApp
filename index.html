@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/dist/style.css">
+  
+  <title>Frontend Mentor | Todo app</title>
+</head>
+<body>
+
+  <div class="container main-title">
+    <div class="main-header">TODO</div>
+    <img id="theme-icon" src="/images/icon-moon.svg" alt="Change theme" class="theme-icon">
+  </div>
+
+  <div id="creator" class="container create item border">
+    <div class="circle-wrapper"><div class="circle"></div></div><input id="createNew" class="text" placeholder="Create a new todo..."></input>
+  </div>
+
+  <div class="container list shadow border">
+    <div class="pending item">
+      <div class="undone-text">
+        <p>0 items left</p>
+      </div>
+      <div class="categories show-only-desktop">
+        <p class="pointer inline">All</p><p class="pointer inline">Active</p><p class="pointer inline">Completed</p>
+      </div>
+      <div id="clearCompleted" class="clear-completed">
+        <p class="pointer align-right">Clear Completed</p>
+      </div>      
+    </div>
+  </div>
+
+  <div class="container categories item m-top show-only-on-mobile border">
+    <div class="filters">
+      <p class="pointer inline">All</p><p class="pointer inline">Active</p><p class="pointer inline">Completed</p>
+    </div>
+  </div>
+
+  <p class="drag-text">Drag and drop to reorder list</p>
+
+  <!--
+  Todo
+
+  Add dynamic number items left
+
+  All
+  Active 
+  Completed
+
+  Clear Completed
+
+  Drag and drop to reorder list
+  -->
+  <script src="/app/js/script.js"></script>
+</body>
+</html>

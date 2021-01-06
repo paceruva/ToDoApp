@@ -1,0 +1,15 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {    
+    font-size: 1.125rem;
+    background-size: auto 200px;
+    background-image: url("/images/bg-mobile-light.jpg");
+    background-repeat: no-repeat;
+    background-color: $veryLightGray;
+    color: $darkGrayishBlue;
+}
