@@ -1,11 +1,76 @@
+body {
+    background-size: auto 200px;
+    background-image: url("/images/bg-mobile-light.jpg");
+    background-repeat: no-repeat;
+    background-color: $veryLightGray;
+    color: $darkGrayishBlue;
+    @include breakpoint-up(medium) {
+        background-image: url("/images/bg-desktop-light.jpg");
+        background-size: auto 300px;
+    }
+}
+
+body.dark-theme {
+    background-image: url("/images/bg-mobile-dark.jpg");
+    background-color: $veryDarkBlueDT;
+    @include breakpoint-up(medium) {
+        background-image: url("/images/bg-desktop-dark.jpg");
+        background-size: auto 300px;
+    }
+    .shadow {
+        box-shadow: none;
+    }
+    .create {
+        background-color: $veryMuchDarkGrayishBlueDT;
+        input {
+            background-color: $veryMuchDarkGrayishBlueDT;
+        }
+    }
+    .item {
+        .circle-wrapper {
+            background-color: $veryDarkGrayishBlueDT;
+            .circle {
+                background-color: $veryMuchDarkGrayishBlueDT;
+            }
+            .text {
+                color: $darkGrayishBlue;
+            }
+        }
+    }
+    .pending {
+        color: $darkGrayishBlueDT;
+    }
+    .list {
+        background-color: $veryMuchDarkGrayishBlueDT;
+    }
+    .categories {
+        background-color: $veryMuchDarkGrayishBlueDT;
+        color: $darkGrayishBlueDT;
+    }
+    .pointer:hover {
+        color: $veryLightGray;
+    }
+    .main-title {
+        .theme-icon {
+            background-image: url("/images/icon-sun.svg");
+        }
+    }
+}
+
 .container {
     margin: 0 1.625rem;
+    @include breakpoint-up(large) {
+        margin: 0 28.125rem;
+    }
 }
 
 .create {
     background-color: $veryLightGray;
     margin-bottom: 1rem;
     cursor: pointer;
+    input {
+        background-color: $veryLightGray;
+    }
 }
 
 .item {
@@ -13,22 +78,29 @@
     padding: 0.875rem 1.2rem;
     display: flex;
     align-items: center;
-
     div {
         display: inline-block;
     }
-
     .show-only-desktop {
         display: none;
+        @include breakpoint-up(large) {
+            display: inline-block;
+            width: 10.3125rem;
+            text-align: center;
+            p:first-child {
+                float: left;
+            }
+            p:last-child {
+                float: right;
+            }
+        }
     }
-
     .circle-wrapper {
         background-color: $veryLightGrayishBlue;
         height: 1.25rem;
         width: 1.25rem;
         border-radius: 50%;
         margin-right: 0.8125rem;
-
         .circle {
             background-color: $veryLightGray;
             height: 1.125rem;
@@ -37,16 +109,29 @@
             margin: 1px;
         }
     }
-
     .text {
         color: $darkGrayishBlue;
         font-size: 0.75rem;
         border: none;
     }
+    @include breakpoint-up(large) {
+        height: 4rem;
+        .circle-wrapper {
+            height: 1.5rem;
+            width: 1.5rem;
+            .circle {
+                height: 1.375rem;
+                width: 1.375rem;
+            }
+        }
+        .text {
+            font-size: 1.25rem;
+        }
+    }
 }
 
-.item:focus-within, .item:hover {
-
+.item:focus-within,
+.item:hover {
     .circle-wrapper {
         background: linear-gradient(135deg, $backgroundLightBlue, $backgroundPurple);
     }
@@ -54,50 +139,37 @@
 
 .list {
     background-color: $veryLightGray;
-
     p {
         width: max-content;
     }
-
-    .undone {
-
-    }
-
-
+    .undone {}
     .pending {
         display: flex;
-        font-size: 0.625rem; 
-
+        font-size: 0.625rem;
         .undone-text {
             flex: 1;
         }
-
         .clear-completed {
             flex: 1;
-
             .align-right {
                 margin-left: auto;
             }
+        }
+    }
+    @include breakpoint-up(large) {
+        .pending {
+            font-size: 0.75rem;
         }
     }
 }
 
 .categories {
     background-color: $veryLightGray;
-    font-size: 0.75rem; 
+    font-size: 0.75rem;
     font-weight: $large;
-
-    p:hover {
-        color: $brightBlue;
-    }
-
     .filters {
         margin: 0 auto;
         width: 10.3125rem;
-
-        p:hover {
-            color: $brightBlue;
-        }
     }
 }
 
@@ -109,28 +181,48 @@
     cursor: pointer;
 }
 
+.pointer:hover {
+    color: $veryDarkGrayishBlue;
+}
+
 .shadow {
-    box-shadow: 0 0 20px 10px hsla(236, 9%, 61%, 0.2), 
-                0 100px 50px 10px hsla(236, 9%, 61%, 0.2);
+    box-shadow: 0 0 20px 10px hsla(236, 9%, 61%, 0.2), 0 100px 50px 10px hsla(236, 9%, 61%, 0.2);
+    @include breakpoint-up(large) {
+        box-shadow: 0 20px 50px 20px hsla(236, 9%, 61%, 0.2);
+    }
 }
 
 .main-title {
     padding-top: 3rem;
     padding-bottom: 2.5rem;
     color: $veryLightGray;
-
     .main-header {
         letter-spacing: 0.75rem;
         font-weight: $large;
         font-size: 1.5rem;
         display: inline-block;
     }
-
     .theme-icon {
         cursor: pointer;
         float: right;
         clear: right;
         height: 1.25rem;
+        width: 1.25rem;
+        background-size: cover;
+        background-image: url("/images/icon-moon.svg");
+        background-repeat: no-repeat;
+    }
+    @include breakpoint-up(large) {
+        padding-top: 4.875rem;
+        padding-bottom: 3.125rem;
+        .main-header {
+            letter-spacing: 1rem;
+            font-size: 2.375rem;
+        }
+        .theme-icon {
+            height: 1.875rem;
+            width: 1.875rem;
+        }
     }
 }
 
@@ -140,15 +232,15 @@
 
 .show-only-on-mobile {
     text-align: center;
-
     p:first-child {
         float: left;
     }
-
     p:last-child {
-        float:right;
+        float: right;
     }
-    
+    @include breakpoint-up(large) {
+        display: none;
+    }
 }
 
 .drag-text {
@@ -160,4 +252,8 @@
 
 .border {
     border-radius: 5px;
+}
+
+.active {
+    color: $brightBlue;
 }

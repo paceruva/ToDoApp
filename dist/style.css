@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -8,6 +10,9 @@
 
 body {
   font-size: 1.125rem;
+}
+
+body {
   background-size: auto 200px;
   background-image: url("/images/bg-mobile-light.jpg");
   background-repeat: no-repeat;
@@ -15,14 +20,89 @@ body {
   color: #9394a5;
 }
 
+@media (min-width: 47.9375rem) {
+  body {
+    background-image: url("/images/bg-desktop-light.jpg");
+    background-size: auto 300px;
+  }
+}
+
+body.dark-theme {
+  background-image: url("/images/bg-mobile-dark.jpg");
+  background-color: #161722;
+}
+
+@media (min-width: 47.9375rem) {
+  body.dark-theme {
+    background-image: url("/images/bg-desktop-dark.jpg");
+    background-size: auto 300px;
+  }
+}
+
+body.dark-theme .shadow {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body.dark-theme .create {
+  background-color: #393a4c;
+}
+
+body.dark-theme .create input {
+  background-color: #393a4c;
+}
+
+body.dark-theme .item .circle-wrapper {
+  background-color: #4d5066;
+}
+
+body.dark-theme .item .circle-wrapper .circle {
+  background-color: #393a4c;
+}
+
+body.dark-theme .item .circle-wrapper .text {
+  color: #9394a5;
+}
+
+body.dark-theme .pending {
+  color: #777a92;
+}
+
+body.dark-theme .list {
+  background-color: #393a4c;
+}
+
+body.dark-theme .categories {
+  background-color: #393a4c;
+  color: #777a92;
+}
+
+body.dark-theme .pointer:hover {
+  color: #fafafa;
+}
+
+body.dark-theme .main-title .theme-icon {
+  background-image: url("/images/icon-sun.svg");
+}
+
 .container {
   margin: 0 1.625rem;
+}
+
+@media (min-width: 63.9375rem) {
+  .container {
+    margin: 0 28.125rem;
+  }
 }
 
 .create {
   background-color: #fafafa;
   margin-bottom: 1rem;
   cursor: pointer;
+}
+
+.create input {
+  background-color: #fafafa;
 }
 
 .item {
@@ -42,6 +122,20 @@ body {
 
 .item .show-only-desktop {
   display: none;
+}
+
+@media (min-width: 63.9375rem) {
+  .item .show-only-desktop {
+    display: inline-block;
+    width: 10.3125rem;
+    text-align: center;
+  }
+  .item .show-only-desktop p:first-child {
+    float: left;
+  }
+  .item .show-only-desktop p:last-child {
+    float: right;
+  }
 }
 
 .item .circle-wrapper {
@@ -66,7 +160,25 @@ body {
   border: none;
 }
 
-.item:focus-within .circle-wrapper, .item:hover .circle-wrapper {
+@media (min-width: 63.9375rem) {
+  .item {
+    height: 4rem;
+  }
+  .item .circle-wrapper {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .item .circle-wrapper .circle {
+    height: 1.375rem;
+    width: 1.375rem;
+  }
+  .item .text {
+    font-size: 1.25rem;
+  }
+}
+
+.item:focus-within .circle-wrapper,
+.item:hover .circle-wrapper {
   background: linear-gradient(135deg, #57ddff, #c058f3);
 }
 
@@ -103,23 +215,21 @@ body {
   margin-left: auto;
 }
 
+@media (min-width: 63.9375rem) {
+  .list .pending {
+    font-size: 0.75rem;
+  }
+}
+
 .categories {
   background-color: #fafafa;
   font-size: 0.75rem;
   font-weight: 700;
 }
 
-.categories p:hover {
-  color: #3a7bfd;
-}
-
 .categories .filters {
   margin: 0 auto;
   width: 10.3125rem;
-}
-
-.categories .filters p:hover {
-  color: #3a7bfd;
 }
 
 .inline {
@@ -130,9 +240,20 @@ body {
   cursor: pointer;
 }
 
+.pointer:hover {
+  color: #484b6a;
+}
+
 .shadow {
   -webkit-box-shadow: 0 0 20px 10px rgba(147, 148, 165, 0.2), 0 100px 50px 10px rgba(147, 148, 165, 0.2);
           box-shadow: 0 0 20px 10px rgba(147, 148, 165, 0.2), 0 100px 50px 10px rgba(147, 148, 165, 0.2);
+}
+
+@media (min-width: 63.9375rem) {
+  .shadow {
+    -webkit-box-shadow: 0 20px 50px 20px rgba(147, 148, 165, 0.2);
+            box-shadow: 0 20px 50px 20px rgba(147, 148, 165, 0.2);
+  }
 }
 
 .main-title {
@@ -153,6 +274,25 @@ body {
   float: right;
   clear: right;
   height: 1.25rem;
+  width: 1.25rem;
+  background-size: cover;
+  background-image: url("/images/icon-moon.svg");
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 63.9375rem) {
+  .main-title {
+    padding-top: 4.875rem;
+    padding-bottom: 3.125rem;
+  }
+  .main-title .main-header {
+    letter-spacing: 1rem;
+    font-size: 2.375rem;
+  }
+  .main-title .theme-icon {
+    height: 1.875rem;
+    width: 1.875rem;
+  }
 }
 
 .m-top {
@@ -171,6 +311,12 @@ body {
   float: right;
 }
 
+@media (min-width: 63.9375rem) {
+  .show-only-on-mobile {
+    display: none;
+  }
+}
+
 .drag-text {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -182,5 +328,9 @@ body {
 
 .border {
   border-radius: 5px;
+}
+
+.active {
+  color: #3a7bfd;
 }
 /*# sourceMappingURL=style.css.map */
