@@ -13,7 +13,8 @@ body {
 }
 
 body {
-  background-size: auto 200px;
+  background-size: 100% 200px;
+  background-position: top center;
   background-image: url("/images/bg-mobile-light.jpg");
   background-repeat: no-repeat;
   background-color: #fafafa;
@@ -23,7 +24,7 @@ body {
 @media (min-width: 47.9375rem) {
   body {
     background-image: url("/images/bg-desktop-light.jpg");
-    background-size: auto 300px;
+    background-size: 100% 300px;
   }
 }
 

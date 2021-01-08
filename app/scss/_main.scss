@@ -1,12 +1,13 @@
 body {
-    background-size: auto 200px;
+    background-size: 100% 200px;
+    background-position: top center;
     background-image: url("/images/bg-mobile-light.jpg");
     background-repeat: no-repeat;
     background-color: $veryLightGray;
     color: $darkGrayishBlue;
     @include breakpoint-up(medium) {
         background-image: url("/images/bg-desktop-light.jpg");
-        background-size: auto 300px;
+        background-size: 100% 300px;
     }
 }
 
@@ -142,7 +143,6 @@ body.dark-theme {
     p {
         width: max-content;
     }
-    .undone {}
     .pending {
         display: flex;
         font-size: 0.625rem;
