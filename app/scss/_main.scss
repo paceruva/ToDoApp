@@ -53,6 +53,13 @@ body.dark-theme {
                 border-bottom: 1px solid $veryDarkGrayishBlueDT;
             }
             .completed {
+                .circle-wrapper {
+                    background: url("/images/icon-check.svg") no-repeat, linear-gradient(135deg, $backgroundLightBlue, $backgroundPurple);
+                    background-position: center;
+                    .circle {
+                        background-color: transparentize($color: white, $amount: 0.8);
+                    }
+                }
                 p {
                     color: $darkGrayishBlueDT;
                 }

@@ -81,6 +81,15 @@ body.dark-theme .list #undone .undone-task {
   border-bottom: 1px solid #4d5066;
 }
 
+body.dark-theme .list #undone .completed .circle-wrapper {
+  background: url("/images/icon-check.svg") no-repeat, linear-gradient(135deg, #57ddff, #c058f3);
+  background-position: center;
+}
+
+body.dark-theme .list #undone .completed .circle-wrapper .circle {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 body.dark-theme .list #undone .completed p {
   color: #777a92;
 }
