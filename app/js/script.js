@@ -21,6 +21,17 @@ document.querySelector("#createNew").addEventListener("keyup",
         }
     });
 
+document.querySelectorAll(".circle").forEach(element => {
+    element.addEventListener("click", function(click) {
+        const parent = click.target.parentElement.parentElement;
+        if (parent.classList.contains("completed")) {
+            parent.classList.remove("completed");
+        } else {
+            parent.classList.add("completed");
+        }
+    });
+});
+
 const filters = document.querySelectorAll(".filter");
 filters.forEach(function(element, i) {
     element.addEventListener("click", function() {
@@ -48,6 +59,4 @@ function addTask() {
     const taskName = input.value;
     input.value = "";
     var task = new Task(taskName);
-    localStorage.setItem(task.taskName, task.state);
-    createElement(taks.taskName);
 }

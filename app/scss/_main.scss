@@ -33,9 +33,9 @@ body.dark-theme {
             .circle {
                 background-color: $veryMuchDarkGrayishBlueDT;
             }
-            .text {
-                color: $darkGrayishBlueDT;
-            }
+        }
+        .text {
+            color: $lightGrayishBlueDT;
         }
     }
     .list {
@@ -51,6 +51,11 @@ body.dark-theme {
         #undone {
             .undone-task {
                 border-bottom: 1px solid $veryDarkGrayishBlueDT;
+            }
+            .completed {
+                p {
+                    color: $darkGrayishBlueDT;
+                }
             }
         }
     }
@@ -124,7 +129,7 @@ body.dark-theme {
         }
     }
     .text {
-        color: $darkGrayishBlue;
+        color: $veryDarkGrayishBlue;
         font-size: 0.75rem;
         border: none;
     }
@@ -179,6 +184,19 @@ body.dark-theme {
         .undone-task {
             border-radius: 0;
             border-bottom: 1px solid $veryLightGrayishBlue;
+        }
+        .completed {
+            .circle-wrapper {
+                background: url("/images/icon-check.svg") no-repeat, linear-gradient(135deg, $backgroundLightBlue, $backgroundPurple);
+                background-position: center;
+                .circle {
+                    background-color: transparent;
+                }
+            }
+            p {
+                text-decoration: line-through;
+                color: $veryLightGrayishBlue;
+            }
         }
     }
     @include breakpoint-up(large) {

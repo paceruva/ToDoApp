@@ -61,8 +61,8 @@ body.dark-theme .item .circle-wrapper .circle {
   background-color: #393a4c;
 }
 
-body.dark-theme .item .circle-wrapper .text {
-  color: #777a92;
+body.dark-theme .item .text {
+  color: #cacde8;
 }
 
 body.dark-theme .list {
@@ -79,6 +79,10 @@ body.dark-theme .list .pending .clear-completed p:hover {
 
 body.dark-theme .list #undone .undone-task {
   border-bottom: 1px solid #4d5066;
+}
+
+body.dark-theme .list #undone .completed p {
+  color: #777a92;
 }
 
 body.dark-theme .categories {
@@ -168,7 +172,7 @@ body.dark-theme .main-title .theme-icon {
 }
 
 .item .text {
-  color: #9394a5;
+  color: #484b6a;
   font-size: 0.75rem;
   border: none;
 }
@@ -239,6 +243,20 @@ body.dark-theme .main-title .theme-icon {
 .list #undone .undone-task {
   border-radius: 0;
   border-bottom: 1px solid #e4e5f1;
+}
+
+.list #undone .completed .circle-wrapper {
+  background: url("/images/icon-check.svg") no-repeat, linear-gradient(135deg, #57ddff, #c058f3);
+  background-position: center;
+}
+
+.list #undone .completed .circle-wrapper .circle {
+  background-color: transparent;
+}
+
+.list #undone .completed p {
+  text-decoration: line-through;
+  color: #e4e5f1;
 }
 
 @media (min-width: 63.9375rem) {
