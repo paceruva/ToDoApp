@@ -16,7 +16,7 @@ body.dark-theme {
     background-color: $veryDarkBlueDT;
     @include breakpoint-up(medium) {
         background-image: url("/images/bg-desktop-dark.jpg");
-        background-size: auto 300px;
+        background-size: 100% 300px;
     }
     .shadow {
         box-shadow: none;
@@ -34,22 +34,35 @@ body.dark-theme {
                 background-color: $veryMuchDarkGrayishBlueDT;
             }
             .text {
-                color: $darkGrayishBlue;
+                color: $darkGrayishBlueDT;
             }
         }
     }
-    .pending {
-        color: $darkGrayishBlueDT;
-    }
     .list {
         background-color: $veryMuchDarkGrayishBlueDT;
+        .pending {
+            color: $darkGrayishBlueDT;
+            .clear-completed {
+                p:hover {
+                    color: $lightGrayishBlueHoverDT;
+                }
+            }
+        }
+        #undone {
+            .undone-task {
+                border-bottom: 1px solid $veryDarkGrayishBlueDT;
+            }
+        }
     }
     .categories {
         background-color: $veryMuchDarkGrayishBlueDT;
         color: $darkGrayishBlueDT;
     }
     .pointer:hover {
-        color: $veryLightGray;
+        color: $lightGrayishBlueHoverDT;
+        input {
+            color: $lightGrayishBlueHoverDT;
+        }
     }
     .main-title {
         .theme-icon {
@@ -154,6 +167,18 @@ body.dark-theme {
             .align-right {
                 margin-left: auto;
             }
+            p {
+                cursor: pointer;
+            }
+            p:hover {
+                color: $veryDarkGrayishBlue;
+            }
+        }
+    }
+    #undone {
+        .undone-task {
+            border-radius: 0;
+            border-bottom: 1px solid $veryLightGrayishBlue;
         }
     }
     @include breakpoint-up(large) {
@@ -183,6 +208,9 @@ body.dark-theme {
 
 .pointer:hover {
     color: $veryDarkGrayishBlue;
+    input {
+        color: $veryDarkGrayishBlue;
+    }
 }
 
 .shadow {

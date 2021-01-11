@@ -14,25 +14,40 @@ document.querySelector("#theme-icon").addEventListener("click",
         }
     });
 
+document.querySelector("#createNew").addEventListener("keyup",
+    function(event) {
+        if (event.keyCode === 13) {
+            addTask();
+        }
+    });
+
 const filters = document.querySelectorAll(".filter");
 filters.forEach(function(element, i) {
     element.addEventListener("click", function() {
         disable();
-        filters[i%3].classList.add("active");
-        filters[i%3+3].classList.add("active");
+        filters[i % 3].classList.add("active");
+        filters[i % 3 + 3].classList.add("active");
         filter(element.innerHTML);
     })
 });
 
 function disable() {
     filters.forEach(element => {
-        if(element.classList.contains("active")) {
+        if (element.classList.contains("active")) {
             element.classList.remove("active");
         }
     })
 }
 
 function filter(type) {
-    type = type.toLowerCase();
     console.log(type);
+}
+
+function addTask() {
+    const input = document.querySelector("#createNew");
+    const taskName = input.value;
+    input.value = "";
+    var task = new Task(taskName);
+    localStorage.setItem(task.taskName, task.state);
+    createElement(taks.taskName);
 }

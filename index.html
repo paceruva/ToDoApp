@@ -21,13 +21,27 @@
         <div id="theme-icon" class="theme-icon"></div>
     </div>
 
-    <div id="creator" class="container create item border">
+    <div id="creator" class="container create item border pointer">
         <div class="circle-wrapper">
             <div class="circle"></div>
         </div><input id="createNew" class="text" placeholder="Create a new todo..."></input>
     </div>
 
     <div class="container list shadow border">
+        <div id="undone">
+            <div class="item border undone-task pointer">
+                <div class="circle-wrapper">
+                    <div class="circle"></div>
+                </div>
+                <p>Jog around the park 3x</p>
+            </div>
+            <div class="item border undone-task pointer">
+                <div class="circle-wrapper">
+                    <div class="circle"></div>
+                </div>
+                <p>10 minutes meditation</p>
+            </div>
+        </div>
         <div class="pending item">
             <div class="undone-text">
                 <p>0 items left</p>
@@ -38,7 +52,7 @@
                 <p class="pointer inline filter">Completed</p>
             </div>
             <div id="clearCompleted" class="clear-completed">
-                <p class="pointer align-right">Clear Completed</p>
+                <p class="align-right">Clear Completed</p>
             </div>
         </div>
     </div>
@@ -66,6 +80,7 @@
 
   Drag and drop to reorder list
   -->
+    <script src="/app/js/Task.js"></script>
     <script src="/app/js/script.js"></script>
 </body>
 
