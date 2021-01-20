@@ -1,3 +1,8 @@
+let tasks = [];
+let position = 1;
+
+updateEvents();
+
 document.querySelector("#creator").addEventListener("click",
     function() {
         document.querySelector("#createNew").focus();
@@ -20,17 +25,6 @@ document.querySelector("#createNew").addEventListener("keyup",
             addTask();
         }
     });
-
-document.querySelectorAll(".circle").forEach(element => {
-    element.addEventListener("click", function(click) {
-        const parent = click.target.parentElement.parentElement;
-        if (parent.classList.contains("completed")) {
-            parent.classList.remove("completed");
-        } else {
-            parent.classList.add("completed");
-        }
-    });
-});
 
 const filters = document.querySelectorAll(".filter");
 filters.forEach(function(element, i) {
@@ -57,6 +51,35 @@ function filter(type) {
 function addTask() {
     const input = document.querySelector("#createNew");
     const taskName = input.value;
-    input.value = "";
-    var task = new Task(taskName);
+    if (taskName != "") {
+        input.value = "";
+        var task = new Task(position, taskName);
+        tasks.push(task);
+        position++;
+        updateView(task, true);
+    }
+}
+
+function updateView(task, append) {
+    let current = "";
+    const undone = document.querySelector("#undone");
+    if (append) {
+        current = undone.innerHTML;
+    }
+    current += "<div class='item border undone-task pointer'><div class='circle-wrapper'><div class='circle'></div></div><p class='text'>" + task.taskName + "</p></div>";
+    undone.innerHTML = current;
+    updateEvents();
+}
+
+function updateEvents() {
+    document.querySelectorAll(".circle").forEach(element => {
+        element.addEventListener("click", function(click) {
+            const parent = click.target.parentElement.parentElement;
+            if (parent.classList.contains("completed")) {
+                parent.classList.remove("completed");
+            } else {
+                parent.classList.add("completed");
+            }
+        });
+    });
 }
